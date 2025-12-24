@@ -219,11 +219,11 @@ h2 {
     color: #a6e22e;
 }
 
-.code-property1 {
+.code-property.more {
     color: #66d9ef;
 }
         
-.code-value1 {
+.code-value.more {
     color: #ae81ff;
 }
         
@@ -257,9 +257,79 @@ footer {
 
 h4 {
     color: #6a11cb;
-
     border-bottom:2px solid #3498db;
     padding-bottom: 10px;
+}
+
+.demo-header {
+    background: #4361ee;
+    color: white;
+    padding: 12px 15px;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+}
+
+.demo-content {
+    padding: 15px;
+    min-height: 200px;
+    background-color: #f8f9fa;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.control-group {
+    min-width: 200px;
+    flex: 1;
+}
+
+.select{
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.lable {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #3a0ca3;
+}
+
+.demo {
+    background: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+.item {
+    background: #4cc9f0;
+    color: white;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes fadeIn {
