@@ -1,3 +1,9 @@
+:root {
+    --primary: #4361ee;
+    --border-radius: 8px;
+    --box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -231,6 +237,10 @@ h2 {
     color: #f92672;
 }
 
+.code-js {
+    color: #f0f0f0;
+}
+
 h3 {
     margin: 20px;
 }
@@ -408,4 +418,71 @@ h4 {
         transform: translate(-40px, 0) rotate(360deg);
         background-color: red;
     }
+}
+
+.box-demo {
+    background-color: var(--primary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.media-query-demo {
+    font-weight: bold;
+    background-color: #03dcfd;
+}
+
+@media (max-width: 768px) {
+    .media-query-demo::after {
+        content: "小屏幕 (≤768px)";
+        color: #ff00c3;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .media-query-demo::after {
+        content: "中等屏幕 (769px-1024px)";
+        color: #da3636;
+    }
+}
+
+@media (min-width: 1025px) {
+    .media-query-demo::after {
+        content: "大屏幕 (≥1025px)";
+        color: #e9aa0a;
+    }
+}
+
+@media print {
+    .no-print {
+        display: none;
+    }
+    
+    .print-demo::after {
+        content: "这是打印样式！";
+        color: black;
+        font-weight: bold;
+    }
+}
+
+.print-demo {
+    padding: 15px;
+    border: 1px dashed #ccc;
+    margin: 15px 0;
+}
+
+#counter-demo ol {
+    counter-reset: section;
+    margin-left: 20px;
+    list-style: none;
+}
+
+#counter-demo li {
+    counter-increment: section;
+    margin-bottom: 10px;
+}
+
+#counter-demo li::before {
+    content: counters(section, ".") ". ";
+    font-weight: bold;
+    color: #da3636;
 }
