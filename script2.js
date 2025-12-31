@@ -432,6 +432,9 @@ document.addEventListener('DOMContentLoaded',function(){
     const boxshadowcolor = document.getElementById('box-shadow-color')
     const filterdemo = document.getElementById('filter-demo')
     const filtertype = document.getElementById('filter-type')
+    const backdropfilterdemo = document.getElementById('backdrop-filter-demo')
+    const backdropfilter = document.getElementById('backdrop-filter')
+
 
     boxshadowh.addEventListener('input',function(){
         boxshadowdemo.style.boxShadow = `${boxshadowh.value}px ${boxshadowv.value}px ${boxshadowblur.value}px ${boxshadowspread.value}px ${boxshadowcolor.value}`
@@ -455,6 +458,10 @@ document.addEventListener('DOMContentLoaded',function(){
 
     filtertype.addEventListener('change',function(){
         filterdemo.style.filter = filtertype.value
+    })
+
+    backdropfilter.addEventListener('change',function(){
+        backdropfilterdemo.style.backdropFilter = backdropfilter.value
     })
 
     // 其他装饰属性
@@ -490,6 +497,8 @@ document.addEventListener('DOMContentLoaded',function(){
     const skewdemo = document.getElementById('skew-demo')
     const skewx = document.getElementById('skew-x')
     const skewy = document.getElementById('skew-y')
+    const transformorigindemo = document.getElementById('transform-origin-demo')
+    const transformorigin = document.getElementById('transform-origin')
     
     translatex.addEventListener('input',function(){
         translatedemo.style.transform = `translateX(${translatex.value}px) translateY(${translatey.value}px)`
@@ -527,6 +536,10 @@ document.addEventListener('DOMContentLoaded',function(){
         skewdemo.style.transform = `skewX(${skewx.value}deg) skewY(${skewy.value}deg)`
     })
 
+    transformorigin.addEventListener('input',function(){
+        transformorigindemo.style.transformOrigin = transformorigin.value
+    })
+
     // Transition
     const transitiondemo = document.getElementById('transition-demo')
     const transitionproperty = document.getElementById('transition-property')
@@ -546,17 +559,17 @@ document.addEventListener('DOMContentLoaded',function(){
     })
 
     transitiondemo.addEventListener('mouseenter',function(){
-        this.style.backgroundColor = '#f72585';
-        this.style.transform = 'scale(1.2) rotate(10deg)';
+        this.style.backgroundColor = '#f72585'
+        this.style.transform = 'scale(1.2) rotate(10deg)'
         this.style.color = '#fff'
-        this.textContent = '过渡效果生效中!';
+        this.textContent = '过渡效果生效中!'
     })
 
     transitiondemo.addEventListener('mouseleave',function(){
-        this.style.backgroundColor = '';
-        this.style.transform = '';
+        this.style.backgroundColor = ''
+        this.style.transform = ''
         this.style.color = '#000000ff'
-        this.textContent = '悬停查看过渡效果';
+        this.textContent = '悬停查看过渡效果'
     })
 
     // Animation
@@ -581,19 +594,19 @@ document.addEventListener('DOMContentLoaded',function(){
     })
 
     startanimation.addEventListener('click', function() {
-        animationdemo.style.animationPlayState = 'running';
+        animationdemo.style.animationPlayState = 'running'
     });
 
     pauseanimation.addEventListener('click', function() {
-        animationdemo.style.animationPlayState = 'paused';
-    });
+        animationdemo.style.animationPlayState = 'paused'
+    })
 
     resetanimation.addEventListener('click', function() {
-        animationdemo.style.animation = 'none';
+        animationdemo.style.animation = 'none'
         setTimeout(function() {
-                animationdemo.style.animation = `${animationname.value} ${animationduration.value}s ${animationtiming.value} 0s infinite`;
-            }, 10);
-    });
+                animationdemo.style.animation = `${animationname.value} ${animationduration.value}s ${animationtiming.value} 0s infinite`
+            }, 10)
+    })
 
     // 交互效果
     const hoverdemo = document.getElementById('hover-demo')
@@ -601,36 +614,117 @@ document.addEventListener('DOMContentLoaded',function(){
     const activedemo = document.getElementById('active-demo')
 
     hoverdemo.addEventListener('mouseenter', function() {
-        this.style.backgroundColor = '#f72585';
-        this.style.transform = 'scale(1.1) rotate(5deg)';
-        this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
-        this.textContent = '悬停效果!';
-    });
+        this.style.backgroundColor = '#f72585'
+        this.style.transform = 'scale(1.1) rotate(5deg)'
+        this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)'
+        this.textContent = '悬停效果!'
+    })
     
     hoverdemo.addEventListener('mouseleave', function() {
-        this.style.backgroundColor = '';
-        this.style.transform = '';
-        this.style.boxShadow = '';
-        this.textContent = '悬停在我上面';
-    });
+        this.style.backgroundColor = ''
+        this.style.transform = ''
+        this.style.boxShadow = ''
+        this.textContent = '悬停在我上面'
+    })
 
     focusdemo.addEventListener('focus', function() {
-        this.style.borderColor = '#4361ee';
-        this.style.boxShadow = '0 0 0 3px rgba(67, 97, 238, 0.3)';
-    });
+        this.style.borderColor = '#4361ee'
+        this.style.boxShadow = '0 0 0 3px rgba(67, 97, 238, 0.3)'
+    })
     
     focusdemo.addEventListener('blur', function() {
-        this.style.borderColor = '#ccc';
-        this.style.boxShadow = 'none';
-    });
+        this.style.borderColor = '#ccc'
+        this.style.boxShadow = 'none'
+    })
 
     activedemo.addEventListener('mousedown', function() {
-        this.style.transform = 'scale(0.95)';
-        this.style.backgroundColor = '#3a0ca3';
-    });
+        this.style.transform = 'scale(0.95)'
+        this.style.backgroundColor = '#3a0ca3'
+    })
     
     activedemo.addEventListener('mouseup', function() {
-        this.style.transform = '';
-        this.style.backgroundColor = '';
+        this.style.transform = ''
+        this.style.backgroundColor = ''
+    })
+
+    // 3D
+    const rotate3ddemo = document.getElementById('rotate3d-demo')
+    const rotate3dx = document.getElementById('rotate3d-x')
+    const rotate3dy = document.getElementById('rotate3d-y')
+    const rotate3dz = document.getElementById('rotate3d-z')
+
+    rotate3dx.addEventListener('input', function() {
+        rotate3ddemo.style.transform = `rotateX(${rotate3dx.value}deg) rotateY(${rotate3dy.value}deg) rotateZ(${rotate3dz.value}deg)`
+    })
+
+    rotate3dy.addEventListener('input', function() {
+        rotate3ddemo.style.transform = `rotateX(${rotate3dx.value}deg) rotateY(${rotate3dy.value}deg) rotateZ(${rotate3dz.value}deg)`
+    })
+
+    rotate3dz.addEventListener('input', function() {
+        rotate3ddemo.style.transform = `rotateX(${rotate3dx.value}deg) rotateY(${rotate3dy.value}deg) rotateZ(${rotate3dz.value}deg)`
+    })
+
+    // Mask & Clip
+    const clippathdemo = document.getElementById('clip-path-demo')
+    const clippath = document.getElementById('clip-path')
+    const maskdemo = document.getElementById('mask-demo')
+    const maskimage = document.getElementById('mask-image')
+
+    clippath.addEventListener('change', function() {
+        clippathdemo.style.clipPath = clippath.value
+    })
+
+    maskimage.addEventListener('change', function() {
+        maskdemo.style.maskImage = maskimage.value
+    })
+
+    // Variable
+    const cssvarprimary = document.getElementById('css-var-primary')
+    const cssvarradius = document.getElementById('css-var-radius')
+    const cssvarshadow = document.getElementById('css-var-shadow')
+
+    cssvarprimary.addEventListener('input', function() {
+        document.documentElement.style.setProperty('--primary', this.value);
     });
+    
+    cssvarradius.addEventListener('input', function() {
+        document.documentElement.style.setProperty('--border-radius', `${this.value}px`);
+    });
+    
+    cssvarshadow.addEventListener('change', function() {
+        document.documentElement.style.setProperty('--box-shadow', this.value);
+    });
+
+    // Blend Modes
+    const blendmodedemo = document.getElementById('blend-mode-demo')
+    const blendmode = document.getElementById('blend-mode')
+
+    blendmode.addEventListener('change', function() {
+        blendmodedemo.style.mixBlendMode = blendmode.value
+    })
+
+    // 其他
+    const userselectdemo = document.getElementById('user-select-demo')
+    const userselect = document.getElementById('user-select')
+    const pointerEventsDemo = document.getElementById('pointer-events-demo')
+    const pointerEvents = document.getElementById('pointer-events')
+
+    userselect.addEventListener('change', function() {
+        userselectdemo.style.userSelect = userselect.value
+    })
+
+    pointerEvents.addEventListener('change', function() {
+        pointerEventsDemo.style.pointerEvents = pointerEvents.value
+    })
+
+    pointerEventsDemo.addEventListener('click', function() {
+        alert('上层元素被点击了！')
+    });
+
+    pointerEventsDemo.parentElement.querySelector('div:first-child').addEventListener('click', function() {
+        alert('底层元素被点击了！')
+    });
+
+    console.dir(document)
 })
