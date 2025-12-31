@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded',function(){
     const selectorItems = document.querySelectorAll('.selector-item')
+    const selectorItems1 = document.querySelectorAll('.selector-item1')
+
     const sidebars = document.querySelectorAll('.sidebar')
     const target = document.getElementById('container')
     
@@ -19,6 +21,13 @@ document.addEventListener('DOMContentLoaded',function(){
             document.getElementById(`${id}+`).classList.add('active')
 
             target.scrollIntoView({ behavior: 'smooth', block:'start'})
+        })
+    })
+
+    selectorItems1.forEach(i => {
+        i.addEventListener('click',function(){
+            selectorItems1.forEach(i => {i.classList.remove('active')})
+            this.classList.add('active');
         })
     })
 
