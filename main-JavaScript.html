@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="style.css">
+<script src="script2.js" defer></script>
+<link rel="icon" href="https://chat.deepseek.com/favicon.svg" type="image/x-icon">
+<title>网页学习笔记</title>
+</head>
+
+<body class="fade-in">
+    <div class="container" id="container">
+        <header>
+            <div class="clear" id="JavaScript1">
+                <h1>JavaScript 1. DOM 基础概念与选择元素</h1>
+                <p class="subtitle"></p>
+            </div>
+
+            <div class="clear" id="JavaScript2">
+                <h1>JavaScript 2. DOM 节点操作</h1>
+                <p class="subtitle"></p>
+            </div>
+
+            <div class="clear" id="JavaScript3">
+                <h1>JavaScript</h1>
+                <p class="subtitle">3.</p>
+            </div>
+
+            <div class="clear" id="JavaScript4">
+                <h1>JavaScript</h1>
+                <p class="subtitle">4.</p>
+            </div>
+
+            <div class="clear" id="JavaScript5">
+                <h1>JavaScript</h1>
+                <p class="subtitle">5.</p>
+            </div>
+
+            <div class="clear" id="JavaScript6">
+                <h1>JavaScript</h1>
+                <p class="subtitle">6.</p>
+            </div>
+        </header>
+
+        <div class="fixed-button" id="button">返回顶部</div>
+
+        <aside class="sidebar" id="JavaScript1+">
+            <h2>目录</h2>
+
+            <ul class="selector-list">
+                <li class="selector-item1" id="JavaScript11">
+                    <div class="selector-name">1. 核心文档信息属性</div>
+                </li>
+                <li class="selector-item1" id="JavaScript12">
+                    <div class="selector-name">2. 文档结构树属性</div>
+                </li>
+                <li class="selector-item1" id="JavaScript13">
+                    <div class="selector-name">3. 文档集合</div>
+                </li>
+                <li class="selector-item1" id="JavaScript14">
+                    <div class="selector-name">4. 文档状态和特性</div>
+                </li>
+                <li class="selector-item1" id="JavaScript15">
+                    <div class="selector-name">5. 样式和字体相关</div>
+                </li>
+                <li class="selector-item1" id="JavaScript16">
+                    <div class="selector-name">6. 事件处理器</div>
+                </li>
+                <li class="selector-item1" id="JavaScript17">
+                    <div class="selector-name">7. 选择器方法</div>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main" id="JavaScript1++">
+            <section class="section" id="JavaScript11+">
+                <h2>1. 核心文档信息属性</h2>
+
+                <div class="code-block other">
+                    <h4>1. 文档标识属性</h4>
+
+                    <div class="code-block">
+                        <span class="code-js">document</span>.<span class="code-js">documentURI</span>;  <span class="code-comment">// "http://127.0.0.1:5500/main.html?code=HTML&number=1"</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">URL</span>;  <span class="code-comment">// 同上，当前文档的完整URL</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">baseURI</span>;  <span class="code-comment">// 文档的基础URI</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">domain</span>;  <span class="code-comment">// "127.0.0.1" - 域名</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">referrer</span>;  <span class="code-comment">// "" - 来源页面(这里为空)</span><br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>2. 文档元信息</h4>
+
+                    <div class="code-block">
+                        <span class="code-js">document</span>.<span class="code-js">characterSet</span>;  <span class="code-comment">// "UTF-8" - 字符编码</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">contentType</span>;  <span class="code-comment">// "text/html" - 内容类型</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">lastModified</span>;  <span class="code-comment">// "12/29/2025 19:21:21" - 最后修改时间</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">title</span>;  <span class="code-comment">// "网页学习笔记" - 页面标题</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">readyState</span>;  <span class="code-comment">// "complete" - 加载状态</span><br>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="JavaScript12+">
+                <h2>2. 文档结构树属性</h2>
+
+                <div class="code-block other">
+                    <h4>1. 文档根节点相关</h4>
+
+                    <div class="code-block">
+                        <span class="code-js">document</span>.<span class="code-js">documentElement</span>;  <span class="code-comment">// &lt;html&gt; 元素</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">body</span>;  <span class="code-comment">// &lt;body.fade-in&gt; 元素</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">head</span>;  <span class="code-comment">// &lt;head&gt; 元素</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">doctype</span>;  <span class="code-comment">// &lt;!DOCTYPE html&gt;</span><br>    
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>2. 节点关系属性</h4>
+
+                    <div class="code-block">
+                        <span class="code-js">document</span>.<span class="code-js">childNodes</span>;  <span class="code-comment">// NodeList(2) - 子节点(&lt;!DOCTYPE&gt; 和 &lt;html&gt;)</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">children</span>;  <span class="code-comment">// HTMLCollection [html] - 子元素</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">firstChild</span>;  <span class="code-comment">// &lt;!DOCTYPE html> - 第一个子节点</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">firstElementChild</span>;  <span class="code-comment">// &lt;html&gt; - 第一个子元素</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">lastChild</span>;  <span class="code-comment">// &lt;html&gt; - 最后一个子节点</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">lastElementChild</span>;  <span class="code-comment">// &lt;html&gt; - 最后一个子元素</span><br>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="JavaScript13+">
+                <h2>3. 元素集合</h2>
+
+                <div class="code-block other">
+                    <h4>1. 节点关系属性</h4>
+
+                    <div class="code-block">
+                        <span class="code-js">document</span>.<span class="code-js">images</span>;  <span class="code-comment">// HTMLCollection [img#filter-demo] - 所有图片</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">forms</span>;  <span class="code-comment">// HTMLCollection(2) [form, form] - 所有表单</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">links</span>;  <span class="code-comment">// HTMLCollection(5) [a, a, a, a, a] - 所有链接</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">scripts</span>;  <span class="code-comment">// HTMLCollection(2) [script, script] - 所有脚本</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">styleSheet</span>;  <span class="code-comment">// StyleSheetList {0: CSSStyleSheet} - 所有样式表</span><br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>2. 已废弃的集合(历史遗留)</h4>
+
+                    <div class="code-block">
+                        <span class="code-js">document</span>.<span class="code-js">anchors</span>;  <span class="code-comment">// 已废弃，所有命名锚点</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">applets</span>;  <span class="code-comment">// 已废弃，所有applet</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">plugins</span>;  <span class="code-comment">// 已废弃，所有插件</span><br>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="JavaScript14+">
+                <h2>4. 文档状态和特性</h2>
+
+                <div class="code-block other">
+                    <h4>1. 兼容模式和可见性</h4>
+
+                    <div class="code-block">
+                        <span class="code-js">document</span>.<span class="code-js">compatMode</span>;  <span class="code-comment">// "CSS1Compat" - 标准模式</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">designMode</span>;  <span class="code-comment">// "off" - 设计模式状态</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">hidden</span>;  <span class="code-comment">// false - 页面是否隐藏</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">visibilityState</span>;  <span class="code-comment">// "visible" - 页面可见性状态</span><br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>2. 全屏相关</h4>
+
+                    <div class="code-block">
+                        <span class="code-js">document</span>.<span class="code-js">fullscreenEnabled</span>;  <span class="code-comment">// true - 是否支持全屏</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">fullscreenElement</span>;  <span class="code-comment">// null - 当前全屏元素</span><br>   
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="JavaScript15+">
+                <h2>5. 样式和字体相关</h2>
+
+                <div class="code-block">
+                    <span class="code-js">document</span>.<span class="code-js">fonts</span>;  <span class="code-comment">// FontFaceSet - 字体管理</span><br>
+                    <span class="code-js">document</span>.<span class="code-js">styleSheets</span>;  <span class="code-comment">// 样式表集合</span><br>
+                    <span class="code-js">document</span>.<span class="code-js">adoptedStyleSheets</span>;  <span class="code-comment">// 已采用的样式表(Shadow DOM)</span><br>
+                </div>
+            </section>
+
+            <section class="section" id="JavaScript16+">
+                <h2>6. 事件处理器</h2>
+                <p style="text-indent: 2em;">所有以 on 开头的属性都是事件处理器</p>
+
+                <div class="code-block">
+                    <span class="code-js">document</span>.<span class="code-js">onclick</span> <span class="code-js">=</span> <span class="code-keyword">function</span>(){ ... };  <span class="code-comment">// 点击事件</span><br>
+                    <span class="code-js">document</span>.<span class="code-js">onload</span> <span class="code-js">=</span> <span class="code-keyword">function</span>(){ ... };  <span class="code-comment">// 加载完成事件</span><br>
+                    <span class="code-js">document</span>.<span class="code-js">onkeydown</span> <span class="code-js">=</span> <span class="code-keyword">function</span>(){ ... };  <span class="code-comment">// 键盘按下事件</span><br>
+                </div>
+            </section>
+
+            <section class="section" id="JavaScript17+">
+                <h2>7. 选择器方法</h2>
+
+                <div class="code-block other">
+                    <h4>1. 单个元素选择器</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// getElementById(最快，但只能通过id)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">header</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">getElementById</span>(<span class="code-value more">'header'</span>);<br>
+                        <br>
+                        <span class="code-comment">// querySelector(最灵活，支持所有CSS选择器)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">mainTitle</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'.main-title'</span>);<br>
+                        <span class="code-keyword">const</span> <span class="code-js">firstListItem</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'ul li:first-child'</span>);<br>
+                        <span class="code-keyword">const</span> <span class="code-js">dataElement</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'[data-test]'</span>);<br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>2. 多个元素选择器</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// getElementsByClassName(HTMLCollection，动态)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">boxes</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">getElementsById</span>(<span class="code-value more">'box'</span>);<br>
+                        <br>
+                        <span class="code-comment">// getElementsByTagName(HTMLCollection，动态)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">paragraphs</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">getElementsByTagName</span>(<span class="code-value more">'p'</span>);<br>
+                        <br>
+                        <span class="code-comment">// getElementsByClassName(HTMLCollection，动态)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">boxs</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">getElementsByClassName</span>(<span class="code-value more">'box'</span>);<br>
+                        <br>
+                        <span class="code-comment">// querySelectorAll(NodeList，静态快照)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">listItems</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelectorAll</span>(<span class="code-value more">'.list-item'</span>);<br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>3. 特殊选择器</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// 表单元素选择器</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">formInputs</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-js">forms</span>[<span class="code-value more">0</span>].<span class="code-js">elements</span>;<br>
+                        <span class="code-keyword">const</span> <span class="code-js">specificInput</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-js">forms</span>[<span class="code-value more">'login'</span>].<span class="code-js">elements</span>[<span class="code-value more">'username'</span>];<br>
+                        <br>
+                        <span class="code-comment">// 关系选择器</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">parent</span> <span class="code-js">=</span> <span class="code-js">element</span>.<span class="code-js">parentElement</span>;<br>
+                        <span class="code-keyword">const</span> <span class="code-js">children</span> <span class="code-js">=</span> <span class="code-js">element</span>.<span class="code-js">children</span>;  <span class="code-comment">// 只包含元素节点</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">childNodes</span> <span class="code-js">=</span> <span class="code-js">element</span>.<span class="code-js">childNodes</span>;  <span class="code-comment">// 包含所有节点类型</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">nextSibling</span> <span class="code-js">=</span> <span class="code-js">element</span>.<span class="code-js">nextElementSibling</span>;<br>
+                        <span class="code-keyword">const</span> <span class="code-js">prevSibling</span> <span class="code-js">=</span> <span class="code-js">element</span>.<span class="code-js">previousElementSibling</span>;<br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>4. 选择器性能对比</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">/*</span><br>
+                        <span class="code-comment">性能排序(从快到慢)：</span><br>
+                        <span class="code-comment">1. getElementById</span><br>
+                        <span class="code-comment">2. getElementsByClassName/TagName</span><br>
+                        <span class="code-comment">3. querySelector</span><br>
+                        <span class="code-comment">4. querySelectorAll</span><br>
+                        <br>
+                        <span class="code-comment">使用原则：</span><br>
+                        <span class="code-comment">- 能用 id 就用 id</span><br>
+                        <span class="code-comment">- 简单选择器优先</span><br>
+                        <span class="code-comment">- 避免过深的选择器层级</span><br>
+                        <span class="code-comment">*/</span><br>
+                    </div>
+                </div>
+
+            </section>
+
+            <footer>
+                <p>JavaScript DOM 基础概念与选择器 &copy; 2026 | 示例代码展示</p>
+            </footer>
+        </main>
+
+        <aside class="sidebar" id="JavaScript2+">
+            <h2>目录</h2>
+
+            <ul class="selector-list">
+                <li class="selector-item1" id="JavaScript21">
+                    <div class="selector-name">1. 节点创建</div>
+                </li>
+                <li class="selector-item1" id="JavaScript22">
+                    <div class="selector-name">2. 节点插入</div>
+                </li>
+                <li class="selector-item1" id="JavaScript23">
+                    <div class="selector-name">3. 节点修改</div>
+                </li>
+                <li class="selector-item1" id="JavaScript24">
+                    <div class="selector-name">4. 节点删除</div>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main" id="JavaScript2++">
+            <section class="section" id="JavaScript21+">
+                <h2>1. 节点创建</h2>
+
+                <div class="code-block other">
+                    <h4>1. 创建元素节点</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// createElement(最常用)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">div</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createElement</span>(<span class="code-value more">'div'</span>);<br>
+                        <span class="code-keyword">const</span> <span class="code-js">button</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createElement</span>(<span class="code-value more">'button'</span>);<br>
+                        <span class="code-keyword">const</span> <span class="code-js">input</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createElement</span>(<span class="code-value more">'input'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 使用字符串模板(结合innerHTML)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">container</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createElement</span>(<span class="code-value more">'div'</span>);<br>
+                        <span class="code-js">container</span>.<span class="code-js">innerHTML</span> <span class="code-js">=</span> <span class="code-value more">'&lt;span class="text"&gt;Hello&lt;/span&gt;'</span>;<br>
+                        <br>
+                        <span class="code-comment">// cloneNode(克隆已有节点)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">original</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'.item'</span>);<br>
+                        <span class="code-keyword">const</span> <span class="code-js">clone</span> <span class="code-js">=</span> <span class="code-js">original</span>.<span class="code-property more">cloneNode</span>(<span class="code-value more">true</span>);  <span class="code-comment">// true:深拷贝(包含子节点)</span><br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>2. 创建文本节点</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// createTextNode</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">textNode</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createTextNode</span>(<span class="code-value more">'Hello World'</span>);<br>
+                        <br>
+                        <span class="code-comment">// textContent属性</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">div</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createElement</span>(<span class="code-value more">'div'</span>);<br>
+                        <span class="code-js">div</span>.<span class="code-js">textContent</span> <span class="code-js">=</span> <span class="code-value more">'Hello World'</span>;<br>
+                        <br>
+                        <span class="code-comment">// innerText(考虑样式，性能较差)</span><br>
+                        <span class="code-js">div</span>.<span class="code-js">innerText</span> <span class="code-js">=</span> <span class="code-value more">'Hello World'</span>;<br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>3. 创建文档片段</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// DocumentFragment：虚拟容器，批量操作后一次性插入DOM</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">fragment</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createDocumentFragment</span>();<br>
+                        <br>
+                        <span class="code-keyword">for</span> (<span class="code-keyword">let</span> <span class="code-js">i</span> <span class="code-js">=</span> <span class="code-value more">0</span>; <span class="code-js">i</span> &lt; <span class="code-value more">100</span>; <span class="code-js">i++</span>) {<br>
+                        &nbsp&nbsp<span class="code-keyword">const</span> <span class="code-js">item</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createElement</span>(<span class="code-value more">'div'</span>);<br>
+                        &nbsp&nbsp<span class="code-js">item</span>.<span class="code-js">textContent</span> <span class="code-js">=</span> <span class="code-value more">`Item <span class="code-js">${ i }</span>`</span>;<br>
+                        &nbsp&nbsp<span class="code-js">fragment</span>.<span class="code-property more">appendChild</span>(<span class="code-value more">item</span>);<br>
+                        }<br>
+                        <br>
+                        <span class="code-comment">// 一次性插入，只触发一次重绘</span><br>
+                        <span class="code-js">document</span>.<span class="code-js">body</span>.<span class="code-property more">appendChild</span>(<span class="code-js">fragment</span>);<br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>4. 创建属性节点</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// setAttribute</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">img</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createElement</span>(<span class="code-value more">'img'</span>);<br>
+                        <span class="code-js">img</span>.<span class="code-property more">setAttribute</span>.(<span class="code-value more">'src'</span>, <span class="code-value more">'image.jpg'</span>);<br>
+                        <span class="code-js">img</span>.<span class="code-property more">setAttribute</span>.(<span class="code-value more">'alt'</span>, <span class="code-value more">'Description'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 直接设置属性</span><br>
+                        <span class="code-js">div</span>.<span class="code-js">src</span> <span class="code-js">=</span> <span class="code-value more">'image.jpg'</span>;<br>
+                        <span class="code-js">div</span>.<span class="code-js">className</span> <span class="code-js">=</span> <span class="code-value more">'thumbnail'</span>;  <span class="code-comment">// 注意：不是'class'</span><br>
+                        <span class="code-js">div</span>.<span class="code-js">id</span> <span class="code-js">=</span> <span class="code-value more">'main-image'</span>;<br>
+                        <br>
+                        <span class="code-comment">// createAttribute(较少用)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">attr</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createAttribute</span>(<span class="code-value more">'data-custom'</span>);<br>
+                        <span class="code-js">attr</span>.<span class="code-js">value</span> <span class="code-js">=</span> <span class="code-value more">'value'</span>;<br>
+                        <span class="code-js">img</span>.<span class="code-property more">setAttributeNode</span>(<span class="code-js">attr</span>);<br>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="JavaScript22+">
+                <h2>2. 节点插入</h2>
+
+                <div class="code-block other">
+                    <h4>1. 插入子节点</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// appendChild：末尾添加</span><br>
+                        <span class="code-js">parent</span>.<span class="code-property more">appendChild</span>(<span class="code-js">child</span>);<br>
+                        <br>
+                        <span class="code-comment">// prepend：开头添加(现代API)</span><br>
+                        <span class="code-js">parent</span>.<span class="code-property more">prepend</span>(<span class="code-js">child</span>);<br>
+                        <br>
+                        <span class="code-comment">// 示例</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">list</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">getElementById</span>(<span class="code-value more">'list'</span>);<br>
+                        <span class="code-keyword">const</span> <span class="code-js">newItem</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createElement</span>(<span class="code-value more">'li'</span>);<br>
+                        <span class="code-js">newItem</span>.<span class="code-js">textContent</span> <span class="code-js">=</span> <span class="code-value more">'New Item'</span>;<br>
+                        <br>
+                        <span class="code-comment">// 添加到末尾</span><br>
+                        <span class="code-js">list</span>.<span class="code-property more">appendChild</span>(<span class="code-js">newItem</span>);<br>
+                        <br>
+                        <span class="code-comment">// 添加到开头</span><br>
+                        <span class="code-js">list</span>.<span class="code-property more">prepend</span>(<span class="code-js">newItem</span>);<br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>2. 插入兄弟节点</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// insertBefore：在指定节点前插入</span><br>
+                        <span class="code-js">parent</span>.<span class="code-property more">insertBefore</span>(<span class="code-js">newNode</span>, <span class="code-js">referenceNode</span>);<br>
+                        <br>
+                        <span class="code-comment">// insertAdjacentElement：更灵活的插入</span><br>
+                        <span class="code-js">element</span>.<span class="code-property more">insertAdjacentElement</span>(<span class="code-value more">position</span>, <span class="code-js">newElement</span>);<br>
+                        <span class="code-comment">// position值：</span><br>
+                        <span class="code-comment">// 'beforebegin' - 元素前</span><br>
+                        <span class="code-comment">// 'afterbegin'  - 元素内，第一个子节点前</span><br>
+                        <span class="code-comment">// 'beforeend'   - 元素内，最后一个子节点后</span><br>
+                        <span class="code-comment">// 'afterend'    - 元素后</span><br>
+                        <br>
+                        <span class="code-comment">// 示例</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">ref</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'.reference'</span>);<br>
+                        <span class="code-keyword">const</span> <span class="code-js">newDiv</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createElement</span>(<span class="code-value more">'div'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 在ref之前插入</span><br>
+                        <span class="code-js">ref</span>.<span class="code-property more">parentNode</span>.<span class="code-property more">insertBefore</span>(<span class="code-js">newNode</span>, <span class="code-js">ref</span>);<br>
+                        <br>
+                        <span class="code-comment">// ref之后插入(需要组合使用)</span><br>
+                        <span class="code-js">ref</span>.<span class="code-property more">parentNode</span>.<span class="code-property more">insertBefore</span>(<span class="code-js">newNode</span>, <span class="code-js">ref</span>.<span class="code-js">nextSibling</span>);<br>
+                        <br>
+                        <span class="code-comment">// 使用insertAdjacentElement</span><br>
+                        <span class="code-js">ref</span>.<span class="code-property more">insertAdjacentElement</span>(<span class="code-value more">'beforebegin'</span>, <span class="code-js">newDiv</span>);  <span class="code-comment">// 在ref前</span><br>
+                        <span class="code-js">ref</span>.<span class="code-property more">insertAdjacentElement</span>(<span class="code-value more">'afterend'</span>, <span class="code-js">newDiv</span>);  <span class="code-comment">// 在ref后</span><br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>3. 替换节点</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// replaceChild：替换子节点</span><br>
+                        <span class="code-js">parent</span>.<span class="code-property more">replaceChild</span>(<span class="code-js">newChild</span>, <span class="code-js">oldChild</span>);<br>
+                        <br>
+                        <span class="code-comment">// replaceWith：替换当前节点</span><br>
+                        <span class="code-js">oldNode</span>.<span class="code-property more">replaceWith</span>(<span class="code-js">newNode</span>);<br>
+                        <br>
+                        <span class="code-comment">// 示例</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">oldItem</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'.old'</span>);<br>
+                        <span class="code-keyword">const</span> <span class="code-js">newItem</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createElement</span>(<span class="code-value more">'div'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 方法1</span><br>
+                        <span class="code-js">oldItem</span>.<span class="code-js">parentNode</span><span class="code-property more">replaceChild</span>(<span class="code-js">newItem</span>, <span class="code-js">oldItem</span>);<br>
+                        <br>
+                        <span class="code-comment">// 方法2(现代)</span><br>
+                        <span class="code-js">oldItem</span>.<span class="code-property more">replaceWith</span>(<span class="code-js">newItem</span>);<br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>4. 批量插入</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// 使用DocumentFragment(推荐，性能好)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">fragment</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createDocumentFragment</span>();<br>
+                        <span class="code-keyword">const</span> <span class="code-js">items</span> <span class="code-js">=</span> [<span class="code-value more">'A'</span>, <span class="code-value more">'B'</span>, <span class="code-value more">'C'</span>];<br>
+                        <br>
+                        <span class="code-js">items</span>.<span class="code-property more">forEach</span>(<span class="code-js">text</span> <span class="code-js">=&gt;</span> {<br>
+                        &nbsp&nbsp<span class="code-keyword">const</span> <span class="code-js">li</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">createElement</span>(<span class="code-value more">'li'</span>);<br>
+                        &nbsp&nbsp<span class="code-js">li</span>.<span class="code-js">textContent</span> <span class="code-js">=</span> <span class="code-js">text</span>;<br>
+                        &nbsp&nbsp<span class="code-js">fragment</span>.<span class="code-property more">appendChild</span>(<span class="code-js">li</span>);<br>
+                        });<br>
+                        <br>
+                        <span class="code-js">document</span>.<span class="code-property more">getElementById</span>(<span class="code-value more">'list'</span>).<span class="code-property more">appendChild</span>(<span class="code-js">fragment</span>);<br>
+                        <br>
+                        <span class="code-comment">// 使用innerHTML(简单，但会移除事件监听器)</span><br>
+                        <span class="code-js">document</span>.<span class="code-property more">getElementById</span>(<span class="code-value more">'container'</span>).<span class="code-js">innerHTML</span> <span class="code-js">=</span> <span class="code-value more">`</span>;<br>
+                        &nbsp&nbsp<span class="code-value more">&lt;div&gt;Item 1&lt;/div&gt;</span>;<br>
+                        &nbsp&nbsp<span class="code-value more">&lt;div&gt;Item 2&lt;/div&gt;</span>;<br>
+                        <span class="code-value more">`</span>;<br>
+                        <br>
+                        <span class="code-comment">// insertAdjacentHTML</span><br>
+                        <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'.target'</span>).<span class="code-property more">insertAdjacentHTML</span>(<span class="code-value more">'beforeend'</span>, <span class="code-value more">`</span><br>
+                        &nbsp&nbsp<span class="code-value more">&lt;div&gt;New Content&lt;/div&gt;</span><br>
+                        <span class="code-value more">`</span>);<br>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="JavaScript23+">
+                <h2>3. 节点修改</h2>
+
+                <h3>1. HTML内容修改</h3>
+
+                <div class="code-block other">
+                    <h4>1. innerHTML - 最常用的方法</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// 基本用法：获取和设置HTML内容</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">container</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">getElementById</span>(<span class="code-value more">'container'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 获取HTML内容</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">htmlContent</span> <span class="code-js">=</span> <span class="code-js">container</span>.<span class="code-property more">innerHTML</span>;<br>
+                        <span class="code-js">console</span>.<span class="code-property more">log</span>(<span class="code-js">htmlContent</span>);  <span class="code-comment">// 字符串形式的HTML</span><br>
+                        <br>
+                        <span class="code-comment">// 设置HTML内容(完全替换)</span><br>
+                        <span class="code-js">container</span>.<span class="code-js">innerHTML</span> <span class="code-js">=</span> <span class="code-value more">'&lt;div class="new"&gt;新内容&lt;/div&gt;'</span>;<br>
+                        <br>
+                        <span class="code-comment">// 追加HTML内容</span><br>
+                        <span class="code-js">container</span>.<span class="code-js">innerHTML</span> <span class="code-js">+=</span> <span class="code-value more">'&lt;span&gt;追加的内容&lt;/span&gt;</span>;<br>
+                        <br>
+                        <span class="code-comment">// 插入到指定位置</span><br>
+                        <span class="code-js">container</span>.<span class="code-js">innerHTML</span> <span class="code-js">=</span><br>
+                        &nbsp&nbsp<span class="code-value more">'&lt;div&gt;第一部分&lt;/div&gt;'</span> <span class="code-js">+</span><br>
+                        &nbsp&nbsp<span class="code-js">container</span>.<span class="code-js">innerHTML</span> <span class="code-js">+</span><br>
+                        &nbsp&nbsp<span class="code-value more">'&lt;div&gt;第三部分&lt;/div&gt;'</span>;<br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>2. innerHTML - 安全问题(XSS攻击)</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// 危险：用户输入可能包含恶意脚本</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">userInput</span> <span class="code-js">=</span> <span class="code-value more">'&lt;img src=x onerror="alert(\'恶意代码\')"&gt;'</span>;<br>
+                        <span class="code-js">container</span>.<span class="code-js">innerHTML</span> <span class="code-js">=</span> <span class="code-value more">userInput</span>;  <span class="code-comment">// 会执行脚本！</span><br>
+                        <br>
+                        <span class="code-comment">安全方案1：使用textContent转义</span><br>
+                        <span class="code-js">container</span>.<span class="code-js">textContent</span> <span class="code-js">=</span> <span class="code-value more">userInput</span>;  <span class="code-comment">// 显示为纯文本</span><br>
+                        <br>
+                        <span class="code-comment">安全方案2：使用DOMPurify等库过滤</span><br>
+                        <span class="code-comment">// npm install dompurify</span><br>
+                        <span class="code-keyword">import</span> <span class="code-js">DOMPurify</span> <span class="code-keyword">from</span> <span class="code-value more">'dompurify'</span>;<br>
+                        <span class="code-js">container</span>.<span class="code-js">textContent</span> <span class="code-js">=</span> <span class="code-value more">DOMPurify</span>.<span class="code-property more">sanitize</span>(<span class="code-js">userInput</span>);<br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>3. outerHTML - 替换整个元素</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// 获取包含自身标签的HTML</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">element</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'.item'</span>);<br>
+                        <span class="code-js">console</span>.<span class="code-property more">log</span>(<span class="code-js">element</span>.<span class="code-js">outerHTML</span>);<br>
+                        <span class="code-comment">// 输出: &lt;div class="item"&gt;内容&lt;/div&gt;</span><br>
+                        <br>
+                        <span class="code-comment">// 替换整个元素(包括标签)</span><br>
+                        <span class="code-js">element</span>.<span class="code-js">outerHTML</span> <span class="code-js">=</span> <span class="code-value more">'&lt;section class="new"&gt;新内容&lt;/section&gt;'</span>;<br>
+                        <br>
+                        <span class="code-comment">// 注意：outerHTML替换后，原element引用会失效！</span><br>
+                        <span class="code-js">console</span>.<span class="code-property more">log</span>(<span class="code-js">element</span>.<span class="code-js">parentNode</span>);  <span class="code-comment">// 可能为null</span><br>
+                    </div>
+                </div>
+
+                <h3>2. 文本内容修改</h3>
+
+                <div class="code-block other">
+                    <h4>1. textContent - 推荐使用</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// 获取所有文本(包括隐藏元素)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">element</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'.content'</span>);<br>
+                        <span class="code-keyword">const</span> <span class="code-js">text</span> <span class="code-js">=</span> <span class="code-js">element</span>.<span class="code-js">textContent</span>;  <span class="code-comment">// 返回所有子节点的文本</span><br>
+                        <br>
+                        <span class="code-comment">// 设置文本(会转义HTML标签)</span><br>
+                        <span class="code-js">element</span>.<span class="code-js">textContent</span> <span class="code-js">=</span> <span class="code-value more">'&lt;strong&gt;安全文本&lt;/strong&gt;'</span>;<br>
+                        <span class="code-comment">// 页面显示: &lt;strong&gt;安全文本&lt;/strong&gt; (作为文本，不是HTML)</span><br>
+                        <br>
+                        <span class="code-comment">// 性能优势：比innerHTML安全，比innerText性能好</span><br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>2. innerText - 考虑样式，性能较差</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// innerText考虑CSS样式</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">element</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'.content'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 获取渲染后的文本(忽略display:none的元素)</span><br>
+                        <span class="code-js">console</span>.<span class="code-property more">log</span>(<span class="code-js">element</span>.<span class="code-js">innerText</span>);<br>
+                        <br>
+                        <span class="code-comment">// 设置文本</span><br>
+                        <span class="code-js">element</span>.<span class="code-js">innerText</span> <span class="code-js">=</span> <span class="code-value more">'新的文本'</span>;<br>
+                        <br>
+                        <span class="code-comment">// 注意性能问题</span><br>
+                        <span class="code-keyword">for</span> (<span class="code-keyword">let</span> <span class="code-js">i</span> <span class="code-js">=</span> <span class="code-value more">0</span>; <span class="code-js">i</span> &lt; <span class="code-value more">1000</span>; <span class="code-js">i++</span>) {<br>
+                        &nbsp&nbsp<span class="code-js">element</span>.<span class="code-js">innerText</span> <span class="code-js">=</span> <span class="code-value more">`文本</span> <span class="code-js">$</span>{<span class="code-js">i</span>}<span class="code-value more">`</span>;  <span class="code-comment">// 会触发重排</span><br>
+                        }<br>
+                        <br>
+                        <span class="code-comment">// 更好的做法</span><br>
+                        <span class="code-keyword">let</span> <span class="code-js">text</span> <span class="code-js">=</span> <span class="code-value more">''</span>;<br>
+                        <span class="code-keyword">for</span> (<span class="code-keyword">let</span> <span class="code-js">i</span> <span class="code-js">=</span> <span class="code-value more">0</span>; <span class="code-js">i</span> &lt; <span class="code-value more">1000</span>; <span class="code-js">i++</span>) {<br>
+                        &nbsp&nbsp<span class="code-js">text</span> <span class="code-js">+=</span> <span class="code-value more">`文本</span> <span class="code-js">$</span>{<span class="code-js">i</span>}<span class="code-value more">\n`</span>;<br>
+                        }<br>
+                        <span class="code-js">element</span>.<span class="code-js">textContent</span> <span class="code-js">=</span> <span class="code-value more">text</span>;  <span class="code-comment">// 一次性设置</span><br>
+                    </div>
+                </div>
+
+                <h3>3. 属性修改</h3>
+
+                <div class="code-block other">
+                    <h4>1. 标准属性 - 直接访问</h4>
+
+                    <div class="code-block">
+                        <span class="code-keyword">const</span> <span class="code-js">img</span><span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'img'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 设置属性(直接访问)</span><br>
+                        <span class="code-js">img</span>.<span class="code-js">src</span> <span class="code-js">=</span> <span class="code-value more">'new-image.jpg'</span>;<br>
+                        <span class="code-js">img</span>.<span class="code-js">alt</span> <span class="code-js">=</span> <span class="code-value more">'新图片描述'</span>;<br>
+                        <span class="code-js">img</span>.<span class="code-js">width</span> <span class="code-js">=</span> <span class="code-value more">'300'</span>;<br>
+                        <span class="code-js">img</span>.<span class="code-js">height</span> <span class="code-js">=</span> <span class="code-value more">'200'</span>;<br>
+                        <br>
+                        <span class="code-comment">// 获取属性</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">src</span> <span class="code-js">=</span> <span class="code-js">img</span>.<span class="code-js">img</span>;<br>
+                        <span class="code-keyword">const</span> <span class="code-js">alt</span> <span class="code-js">=</span> <span class="code-js">img</span>.<span class="code-js">alt</span>;<br>
+                        <br>
+                        <span class="code-comment">// 布尔属性</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">checkbox</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'input[type="checkbox"]'</span>);<br>
+                        <span class="code-js">checkbox</span>.<span class="code-js">checked</span> <span class="code-js">=</span> <span class="code-value more">'true'</span>;  <span class="code-comment">// 选中</span><br>
+                        <span class="code-js">checkbox</span>.<span class="code-js">disabled</span> <span class="code-js">=</span> <span class="code-value more">'true'</span>;  <span class="code-comment">// 禁用</span><br>
+                        <span class="code-js">checkbox</span>.<span class="code-js">readOnly</span> <span class="code-js">=</span> <span class="code-value more">'true'</span>;  <span class="code-comment">// 只读</span><br>
+                        <br>
+                        <span class="code-comment">// class操作(注意：使用className而不是class)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">div</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'div'</span>);<br>
+                        <span class="code-js">div</span>.<span class="code-js">className</span> <span class="code-js">=</span> <span class="code-value more">'new-class'</span>;  <span class="code-comment">// 替换所有类</span><br>
+                        <span class="code-js">div</span>.<span class="code-js">className</span> <span class="code-js">+=</span> <span class="code-value more">'additional'</span>;  <span class="code-comment">// 添加类</span><br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>2. 通用属性 - setAttribute/getAttribute</h4>
+
+                    <div class="code-block">
+                        <span class="code-keyword">const</span> <span class="code-js">element</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'item'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 设置任意属性</span><br>
+                        <span class="code-js">element</span>.<span class="code-property more">setAttribute</span>(<span class="code-value more">'data-id'</span>, <span class="code-value more">'123'</span>);<br>
+                        <span class="code-js">element</span>.<span class="code-property more">setAttribute</span>(<span class="code-value more">'aria-label'</span>, <span class="code-value more">'描述'</span>);<br>
+                        <span class="code-js">element</span>.<span class="code-property more">setAttribute</span>(<span class="code-value more">'custom-attr'</span>, <span class="code-value more">'值'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 获取属性</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">id</span> <span class="code-js">=</span> <span class="code-js">element</span>.<span class="code-property more">getAttribute</span>(<span class="code-value more">'data-id'</span>);<br>
+                        <span class="code-keyword">const</span> <span class="code-js">label</span> <span class="code-js">=</span> <span class="code-js">element</span>.<span class="code-property more">getAttribute</span>(<span class="code-value more">'aria-label'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 检查属性是否存在</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">hasAttr</span> <span class="code-js">=</span> <span class="code-js">element</span>.<span class="code-property more">hasAttribute</span>(<span class="code-value more">'data-id'</span>);  <span class="code-comment">// true</span><br>
+                        <br>
+                        <span class="code-comment">// 移除属性</span><br>
+                        <span class="code-js">element</span>.<span class="code-property more">removeAttribute</span>(<span class="code-value more">'data-id'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 获取所有属性</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">attributes</span> <span class="code-js">=</span> <span class="code-js">element</span>.<span class="code-property more">attributes</span>(<span class="code-value more">'data-id'</span>);<br>
+                        <span class="code-js">Array</span>.<span class="code-property more">from</span>(<span class="code-js">attributes</span>).<span class="code-property more">forEach</span>(<span class="code-js">attr</span> =&gt; {<br>
+                        &nbsp&nbsp<span class="code-js">console</span>.<span class="code-property more">log</span>(<span class="code-value more">`</span><span class="code-js">$</span>{<span class="code-js">attr</span>.<span class="code-js">name</span>}<span class="code-value more">: </span><span class="code-js">$</span>{<span class="code-js">attr</span>.<span class="code-js">value</span>}<span class="code-value more">`</span>);<br>
+                        });<br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>3. data- 属性* - dataset对象</h4>
+
+                    <div class="code-block">
+                        <p>&lt;<span class="code-keyword">div</span> <span class="code-property">id</span>=<span class="code-value">"product"</span> <span class="code-property">data-id</span>=<span class="code-value">"1001"</span> <span class="code-property">data-price</span>=<span class="code-value">"99.99"</span> <span class="code-property">data-category</span>=<span class="code-value">"electronics"</span>&gt;</p>
+                        <br>
+                        <span class="code-keyword">const</span> <span class="code-js">product</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">getElementById</span>(<span class="code-value more">'product'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 通过dataset访问(驼峰命名)</span><br>
+                        <span class="code-js">console</span>.<span class="code-property more">log</span>(<span class="code-js">product</span>.<span class="code-js">dataset</span>.<span class="code-js">id</span>);  <span class="code-comment">// "1001"</span><br>
+                        <span class="code-js">console</span>.<span class="code-property more">log</span>(<span class="code-js">product</span>.<span class="code-js">dataset</span>.<span class="code-js">price</span>);  <span class="code-comment">// "99.99"</span><br>
+                        <span class="code-js">console</span>.<span class="code-property more">log</span>(<span class="code-js">product</span>.<span class="code-js">dataset</span>.<span class="code-js">category</span>);  <span class="code-comment">// "electronics"</span><br>
+                        <br>
+                        <span class="code-comment">// 修改data属性</span><br>
+                        <span class="code-js">product</span>.<span class="code-js">dataset</span>.<span class="code-js">price</span> <span class="code-js">=</span> <span class="code-value more">'89.99'</span>;<br>
+                        <span class="code-js">product</span>.<span class="code-js">dataset</span>.<span class="code-js">stockCount</span> <span class="code-js">=</span> <span class="code-value more">'50'</span>;  <span class="code-comment">// 自动添加data-stock-count</span><br>
+                        <br>
+                        <span class="code-comment">// 删除data属性</span><br>
+                        <span class="code-keyword">delete</span> <span class="code-js">product</span>.<span class="code-js">dataset</span>.<span class="code-js">category</span>;<br>
+                        <br>
+                        <span class="code-comment">// 遍历所有data属性</span><br>
+                        <span class="code-keyword">for</span> (<span class="code-keyword">const</span> <span class="code-js">key</span> <span class="code-keyword">in</span> <span class="code-js">product</span>.<span class="code-js">dataset</span>) <span class="code-js"></span>{<br>
+                        &nbsp&nbsp<span class="code-js">console</span>.<span class="code-property more">log</span>(<span class="code-value more">`data-</span><span class="code-js">$</span>{<span class="code-js">key</span>}<span class="code-value more">: </span><span class="code-js">$</span>{<span class="code-js">product</span></span>.<span class="code-js">dataset</span>[<span class="code-js">key</span>]}<span class="code-value more">`</span>);<br>
+                        }<br>
+                    </div>
+                </div>
+
+                <h3>4. 样式修改</h3>
+
+                <div class="code-block other">
+                    <h4>1. style属性 - 行内样式</h4>
+
+                    <div class="code-block">
+                        <span class="code-keyword">const</span> <span class="code-js">element</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'.box'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 设置单个样式(驼峰命名)</span><br>
+                        <span class="code-js">element</span>.<span class="code-js">style</span>.<span class="code-js">color</span> <span class="code-js">=</span> <span class="code-value more">'red'</span>;<br>
+                        <span class="code-js">element</span>.<span class="code-js">style</span>.<span class="code-js">backgroundColor</span> <span class="code-js">=</span> <span class="code-value more">'#f0f0f0'</span>;<br>
+                        <span class="code-js">element</span>.<span class="code-js">style</span>.<span class="code-js">fontSize</span> <span class="code-js">=</span> <span class="code-value more">'16px'</span>;<br>
+                        <span class="code-js">element</span>.<span class="code-js">style</span>.<span class="code-js">display</span> <span class="code-js">=</span> <span class="code-value more">'flex'</span>;<br>
+                        <br>
+                        <span class="code-comment">// 批量设置</span><br>
+                        <span class="code-js">element</span>.<span class="code-js">style</span>.<span class="code-js">cssText</span> <span class="code-js">=</span> <span class="code-value more">'color: blue; font-size: 20px; margin: 10px;'</span>;<br>
+                        <br>
+                        <span class="code-comment">// 追加样式</span><br>
+                        <span class="code-js">element</span>.<span class="code-js">style</span>.<span class="code-js">cssText</span> <span class="code-js">+=</span> <span class="code-value more">'padding: 15px;'</span>;<br>
+                        <br>
+                        <span class="code-comment">// 获取样式(只能获取行内样式)</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">color</span> <span class="code-js">=</span> <span class="code-js">element</span>.<span class="code-js">style</span>.<span class="code-js">color</span>;  <span class="code-comment">// 仅获取style属性中的值</span><br>
+                        <br>
+                        <span class="code-comment">// 获取样式(只能获取行内样式)</span><br>
+                        <span class="code-js">element</span>.<span class="code-js">style</span>.<span class="code-js">color</span> <span class="code-js">=</span> <span class="code-value more">''</span>;  <span class="code-comment">// 设置为空字符串</span><br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>2. classList - CSS类操作</h4>
+
+                    <div class="code-block">
+                        <span class="code-keyword">const</span> <span class="code-js">element</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'.item'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 添加类</span><br>
+                        <span class="code-js">element</span>.<span class="code-js">classList</span>.<span class="code-property more">add</span>(<span class="code-value more">'active'</span>);<br>
+                        <span class="code-js">element</span>.<span class="code-js">classList</span>.<span class="code-property more">add</span>(<span class="code-value more">'highlight'</span>, <span class="code-value more">'animated'</span>);  <span class="code-comment">// 添加多个</span><br>
+                        <br>
+                        <span class="code-comment">// 移除类</span><br>
+                        <span class="code-js">element</span>.<span class="code-js">classList</span>.<span class="code-property more">remove</span>(<span class="code-value more">'active'</span>);<br>
+                        <span class="code-js">element</span>.<span class="code-js">classList</span>.<span class="code-property more">remove</span>(<span class="code-value more">'highlight'</span>, <span class="code-value more">'animated'</span>);  <span class="code-comment">// 移除多个</span><br>
+                        <br>
+                        <span class="code-comment">// 切换类</span><br>
+                        <span class="code-js">element</span>.<span class="code-js">classList</span>.<span class="code-property more">toggle</span>(<span class="code-value more">'highlight'</span>);  <span class="code-comment">// 如果存在则移除，不存在则添加</span><br>
+                        <br>
+                        <span class="code-comment">// 检查是否存在类</span><br>
+                        <span class="code-keyword">if</span> (<span class="code-js">element</span>.<span class="code-js">classList</span>.<span class="code-property more">contains</span>(<span class="code-value more">'active'</span>)) {<br>
+                        &nbsp&nbsp<span class="code-js">console</span>.<span class="code-property more">log</span>(<span class="code-value more">'元素有active类'</span>);<br>
+                        }<br>
+                        <br>
+                        <span class="code-comment">// 替换类</span><br>
+                        <span class="code-js">element</span>.<span class="code-js">classList</span>.<span class="code-property more">replace</span>(<span class="code-value more">'old-class'</span>, <span class="code-value more">'new-class'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 遍历所有类</span><br>
+                        <span class="code-js">element</span>.<span class="code-js">classList</span>.<span class="code-property more">forEach</span>(<span class="code-js">className</span> <span class="code-js">=&gt;</span> {<br>
+                        &nbsp&nbsp<span class="code-js">console</span>.<span class="code-property more">log</span>(<span class="code-js">className</span>);<br>
+                        });<br>
+                        <br>
+                        <span class="code-comment">// 使用展开运算符</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">classes</span> <span class="code-js">=</span> [<span class="code-value more">...</span><span class="code-js">element</span>.<span class="code-js">classList</span>];<br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>3. 计算样式 - getComputedStyle</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// 获取元素最终计算的样式（包括CSS样式表）</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">element</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'styled'</span>);<br>
+                        <span class="code-keyword">const</span> <span class="code-js">computedStyle</span> <span class="code-js">=</span> <span class="code-js">window</span>.<span class="code-property more">getComputedStyle</span>(<span class="code-js">element</span>);<br>
+                        <br>
+                        <span class="code-comment">// 获取具体样式值</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">color</span> <span class="code-js">=</span> <span class="code-js">computedStyle</span>.<span class="code-js">color</span>;<br>
+                        <span class="code-keyword">const</span> <span class="code-js">fontSize</span> <span class="code-js">=</span> <span class="code-js">computedStyle</span>.<span class="code-js">fontSize</span>;<br>
+                        <span class="code-keyword">const</span> <span class="code-js">margin</span> <span class="code-js">=</span> <span class="code-js">computedStyle</span>.<span class="code-js">margin</span>;<br>
+                        <br>
+                        <span class="code-comment">// 获取伪元素样式</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">beforeStyle</span> <span class="code-js">=</span> <span class="code-property more">getComputedStyle</span>(<span class="code-js">element</span>, <span class="code-value more">'::before'</span>);<br>
+                        <span class="code-keyword">const</span> <span class="code-js">content</span> <span class="code-js">=</span> <span class="code-js">beforeStyle</span>.<span class="code-js">content</span>;<br>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="JavaScript24+">
+                <h2>4. 节点删除</h2>
+
+                <div class="code-block other">
+                    <h4>1. 删除子节点</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// removeChild：移除指定子节点</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">removed</span> <span class="code-js">=</span> <span class="code-js">parent</span>.<span class="code-property more">removeChild</span>(<span class="code-js">child</span>);<br>
+                        <br>
+                        <span class="code-comment">// remove：移除自身(现代API)</span><br>
+                        <span class="code-js">child</span>.<span class="code-property more">remove</span>();<br>
+                        <br>
+                        <span class="code-comment">// 示例</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">list</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">getElementById</span>(<span class="code-value more">'myList'</span>);<br>
+                        <br>
+                        <span class="code-comment">// 移除最后一个子节点</span><br>
+                        <span class="code-keyword">if</span> (<span class="code-js">list</span>.<span class="code-js">lastChild</span>) {<br>
+                        &nbsp&nbsp<span class="code-js">list</span>.<span class="code-property more">removeChild</span>(<span class="code-js">list</span>.<span class="code-js">lastChild</span>);<br>
+                        }<br>
+                        <br>
+                        <span class="code-comment">// 移除特定子节点</span><br>
+                        <span class="code-keyword">const</span> <span class="code-js">itemToRemove</span> <span class="code-js">=</span> <span class="code-js">document</span>.<span class="code-property more">querySelector</span>(<span class="code-value more">'.remove-me'</span>);<br>
+                        <span class="code-keyword">if</span> (<span class="code-js">itemToRemove</span>) {<br>
+                        &nbsp&nbsp<span class="code-js">itemToRemove</span>.<span class="code-js">parentNode</span>.<span class="code-property more">removeChild</span>(<span class="code-js">itemToRemove</span>);<br>
+                        &nbsp&nbsp<span class="code-comment">// 或使用现代语法</span><br>
+                        &nbsp&nbsp<span class="code-js">itemToRemove</span>.<span class="code-property more">remove</span>();<br>
+                        }<br>
+                    </div>
+                </div>
+
+                <div class="code-block other">
+                    <h4>2. 清空所有子节点</h4>
+
+                    <div class="code-block">
+                        <span class="code-comment">// innerHTML(最快)</span><br>
+                        <span class="code-js">container</span>.<span class="code-js">innerHTML</span> <span class="code-js">=</span> <span class="code-value more">''</span>;<br>
+                        <br>
+                        <span class="code-comment">// 循环移除(保留事件监听器引用)</span><br>
+                        <span class="code-keyword">while</span> (<span class="code-js">container</span>.<span class="code-js">firstChild</span>) {<br>
+                        &nbsp&nbsp<span class="code-js">container</span>.<span class="code-property more">removeChild</span>(<span class="code-js">container</span>.<span class="code-js">firstChild</span>);<br>
+                        }<br>
+                        <br>
+                        <span class="code-comment">// textContent(只对文本有效)</span><br>
+                        <span class="code-js">container</span>.<span class="code-js">textContent</span> <span class="code-js">=</span> <span class="code-value more">''</span>;<br>
+                        <br>
+                        <span class="code-comment">// replaceChildren(现代API)</span><br>
+                        <span class="code-js">container</span>.<span class="code-property more">replaceChildren</span>;<br>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <p>JavaScript DOM 节点操作 &copy; 2026 | 示例代码展示</p>
+            </footer>
+        </main>
+
+        <aside class="sidebar" id="JavaScript3+">
+            5
+        </aside>
+
+        <main class="main" id="JavaScript3++">
+            6
+        </main>
+
+        <aside class="sidebar" id="JavaScript4+">
+            7
+        </aside>
+
+        <main class="main" id="JavaScript4++">
+            8
+        </main>
+
+        <aside class="sidebar" id="JavaScript5+">
+            9
+        </aside>
+
+        <main class="main" id="JavaScript5++">
+            10
+        </main>
+
+        <aside class="sidebar" id="JavaScript6+">
+            11
+        </aside>
+
+        <main class="main" id="JavaScript6++">
+            12
+        </main>
+    </div>
+</body>
+</html>
