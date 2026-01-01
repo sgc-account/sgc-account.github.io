@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded',function(){
             selectorItems.forEach(i => {i.classList.remove('active')})
             this.classList.add('active');
 
+            selectorItems1.forEach(i => {i.classList.remove('active')})
+
             sidebars.forEach(i => {i.classList.remove('active')})
             document.getElementById('aside').classList.add('active')
 
@@ -34,4 +36,5 @@ document.addEventListener('DOMContentLoaded',function(){
     document.getElementById('button').addEventListener('click',function(){
         target.scrollIntoView({ behavior: 'smooth', block:'start'})
     })
+
 })
